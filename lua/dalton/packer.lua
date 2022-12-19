@@ -44,4 +44,7 @@ return require('packer').startup(function(use)
   }
   use 'mfussenegger/nvim-jdtls'
   use 'mhinz/vim-signify'
+  -- Php libs
+  use 'nelsyeung/twig.vim'
+
 end)

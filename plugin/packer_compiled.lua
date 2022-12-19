@@ -185,6 +185,11 @@ _G.packer_plugins = {
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["twig.vim"] = {
+    loaded = true,
+    path = "/home/dalton/.local/share/nvim/site/pack/packer/start/twig.vim",
+    url = "https://github.com/nelsyeung/twig.vim"
+  },
   undotree = {
     loaded = true,
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/undotree",
