@@ -46,5 +46,5 @@ return require('packer').startup(function(use)
   use 'mhinz/vim-signify'
   -- Php libs
   use 'nelsyeung/twig.vim'
-
+  use 'stephpy/vim-php-cs-fixer'
 end)

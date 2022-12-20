@@ -200,6 +200,11 @@ _G.packer_plugins = {
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-php-cs-fixer"] = {
+    loaded = true,
+    path = "/home/dalton/.local/share/nvim/site/pack/packer/start/vim-php-cs-fixer",
+    url = "https://github.com/stephpy/vim-php-cs-fixer"
+  },
   ["vim-signify"] = {
     loaded = true,
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/vim-signify",
