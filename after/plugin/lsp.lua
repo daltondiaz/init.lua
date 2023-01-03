@@ -26,6 +26,9 @@ lsp.set_preferences({
 lsp.on_attach(function(client, bufnr) 
 	local opts = {buffer = bufrn, remap = false }
 
+    -- local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+    -- buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
 	vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
 	vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
