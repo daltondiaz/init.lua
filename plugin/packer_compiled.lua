@@ -109,6 +109,12 @@ _G.packer_plugins = {
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["git-conflict.nvim"] = {
+    config = { "\27LJ\2\2:\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17git-conflict\frequire\0" },
+    loaded = true,
+    path = "/home/dalton/.local/share/nvim/site/pack/packer/start/git-conflict.nvim",
+    url = "https://github.com/akinsho/git-conflict.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/gruvbox",
@@ -209,10 +215,19 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/vim-signify",
     url = "https://github.com/mhinz/vim-signify"
+  },
+  vimdiscord = {
+    loaded = true,
+    path = "/home/dalton/.local/share/nvim/site/pack/packer/start/vimdiscord",
+    url = "https://github.com/vbe0201/vimdiscord"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: git-conflict.nvim
+time([[Config for git-conflict.nvim]], true)
+try_loadstring("\27LJ\2\2:\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17git-conflict\frequire\0", "config", "git-conflict.nvim")
+time([[Config for git-conflict.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
