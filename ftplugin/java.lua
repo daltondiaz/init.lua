@@ -21,7 +21,7 @@ local on_attach = function(client, bufnr)
     nnoremap('K', vim.lsp.buf.hover, bufopts, "Show method")
     nnoremap('[d', vim.diagnostic.goto_next, bufopts, "Go to Next Diagnostic")
     nnoremap(']d', vim.diagnostic.goto_prev, bufopts, "Go to Next Diagnostic")
-    nnoremap('<leader>vca', vim.lsp.buf.code_action, bufopts, "Code Action")
+    nnoremap('<leader>ca', vim.lsp.buf.code_action, bufopts, "Code Action")
     nnoremap('<leader>rn', vim.lsp.buf.rename, bufopts, "Rename")
     nnoremap('<leader>gr', vim.lsp.buf.references, bufopts, "Show References")
     nnoremap('<C-h>', vim.lsp.buf.signature_help, bufopts, "")
@@ -65,6 +65,13 @@ local config = {
     -- for a list of options
     settings = {
         java = {
+            format = {
+                settings = {
+                    url = home .. "/.config/nvim/dependencies/eclipse-java-google-style.xml",
+                    profile = "GoogleStyle",
+                },
+            },
+            signatureHelp = { enabled = true },
         }
     },
 
