@@ -47,7 +47,7 @@ return require('packer').startup(function(use)
   use 'mhinz/vim-signify'
   -- Php libs
   use 'nelsyeung/twig.vim'
-  use 'stephpy/vim-php-cs-fixer'
+  -- use 'stephpy/vim-php-cs-fixer'
   use ('vbe0201/vimdiscord')
   use {'akinsho/git-conflict.nvim', tag = "*", config = function()
       require('git-conflict').setup()
