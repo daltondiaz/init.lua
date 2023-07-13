@@ -1,7 +1,8 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>s", vim.cmd.wa)
-vim.keymap.set("n", "<leader>q", vim.cmd.wq)
+vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("n", "<leader>c", vim.cmd.wq)
 vim.keymap.set("n", "<leader>kl", vim.cmd.Vex)
 vim.keymap.set("n", "<leader>jk", vim.cmd.Sex)
 
