@@ -11,9 +11,7 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    -- use('gruvbox-community/gruvbox')
     use('folke/tokyonight.nvim')
-    -- use { "catppuccin/nvim", as = "catppuccin" }
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
@@ -45,13 +43,12 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+    use 'nvim-tree/nvim-web-devicons'
+
     use 'mfussenegger/nvim-jdtls'
     use 'mhinz/vim-signify'
     -- Php libs
     use 'nelsyeung/twig.vim'
     -- use 'stephpy/vim-php-cs-fixer'
     use ('vbe0201/vimdiscord')
-    -- use {'akinsho/git-conflict.nvim', tag = "*", config = function()
-    --     require('git-conflict').setup()
-    -- end}
 end)

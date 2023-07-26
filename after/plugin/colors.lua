@@ -34,6 +34,7 @@ require("tokyonight").setup({
     on_highlights = function(hl, c) end,
 })
 
+
 function ColorMyPencils(color)
 
 	color = color or "tokyonight"
