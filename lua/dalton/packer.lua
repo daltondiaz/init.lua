@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
     use('folke/tokyonight.nvim')
     use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
     use('nvim-treesitter/playground')
+    use('nvim-treesitter/nvim-treesitter-context')
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
@@ -47,6 +48,7 @@ return require('packer').startup(function(use)
     use('lvimuser/lsp-inlayhints.nvim')
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
+    use 'github/copilot.vim'
 
     use 'mfussenegger/nvim-jdtls'
     use 'mhinz/vim-signify'
