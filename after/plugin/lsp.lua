@@ -10,6 +10,7 @@ lsp.ensure_installed({
     'gopls',
 })
 
+lsp.setup_servers({'tsserver', 'eslint'})
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -37,8 +38,9 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
-    vim.keymap.set("n", "<C-s>", function() vim.lsp.buf.signature_help() end, opts)
+    vim.keymap.set("i", "<C-s>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
 
 lsp.setup()
 vim.diagnostic.config {

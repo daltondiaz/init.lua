@@ -45,15 +45,15 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
     use 'nvim-tree/nvim-web-devicons'
-    --use('lvimuser/lsp-inlayhints.nvim')
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
-    use 'github/copilot.vim'
+  --  use 'github/copilot.vim'
+
+    use 'jose-elias-alvarez/null-ls.nvim'
 
     use 'mfussenegger/nvim-jdtls'
     use 'mhinz/vim-signify'
     -- Php libs
     use 'nelsyeung/twig.vim'
-    -- use 'stephpy/vim-php-cs-fixer'
     use('vbe0201/vimdiscord')
 end)
