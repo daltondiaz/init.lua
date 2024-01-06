@@ -49,6 +49,7 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+    use 'folke/neodev.nvim'
     use 'nvim-tree/nvim-web-devicons'
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'

@@ -8,13 +8,14 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {
-    'jdtls',
-    'tsserver',
-    'eslint',
-    'rust_analyzer',
-    'gopls',
-  },
+    ensure_installed = {
+        'jdtls',
+        'tsserver',
+        'eslint',
+        'rust_analyzer',
+        'gopls',
+        'lua_ls'
+    },
   handlers = {
     lsp.default_setup,
     lua_ls = function()
