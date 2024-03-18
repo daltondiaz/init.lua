@@ -1,23 +1,48 @@
 local lsp = require('lsp-zero')
-
+local cmp = require('cmp')
 lsp.preset('recommended')
 
-lsp.ensure_installed({
-    'jdtls',
-    'tsserver',
-    'eslint',
-    'rust_analyzer',
-    'gopls',
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
+
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'jdtls',
+        'tsserver',
+        'eslint',
+        'rust_analyzer',
+        'gopls',
+        'lua_ls'
+    },
+  handlers = {
+    lsp.default_setup,
+    --[[lua_ls = function()
+      local lua_opts = lsp.nvim_lua_ls()
+      require('lspconfig').lua_ls.setup(lua_opts)
+    end,]]
+  },
 })
 
 lsp.setup_servers({'tsserver', 'eslint'})
-local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-o>'] = cmp.mapping.complete(),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+local cmp_action = lsp.cmp_action()
+cmp.setup({
+    mapping = cmp.mapping.preset.insert({
+        -- `Enter` key to confirm completion
+        ['<CR>'] = cmp.mapping.confirm({select = false}),
+
+        -- Ctrl+Space to trigger completion menu
+        ['<C-Space>'] = cmp.mapping.complete(),
+
+        -- Navigate between snippet placeholder
+        --   ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+        --  ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+
+        -- Scroll up and down in the completion documentation
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    })
 })
 
 vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float)
