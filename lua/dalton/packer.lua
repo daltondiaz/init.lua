@@ -61,5 +61,6 @@ return require('packer').startup(function(use)
     use 'mhinz/vim-signify'
     -- Php libs
     use 'nelsyeung/twig.vim'
-    use('vbe0201/vimdiscord')
+    -- use('vbe0201/vimdiscord')
+    use { "nvim-neotest/nvim-nio" }
 end)
