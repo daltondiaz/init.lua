@@ -20,7 +20,7 @@ return require('packer').startup(function(use)
     use {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
-        requires = { {"nvim-lua/plenary.nvim"} }
+        requires = { { "nvim-lua/plenary.nvim" } }
     }
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
@@ -53,7 +53,7 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-web-devicons'
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
-  --  use 'github/copilot.vim'
+    --  use 'github/copilot.vim'
 
     use 'jose-elias-alvarez/null-ls.nvim'
 
@@ -63,4 +63,9 @@ return require('packer').startup(function(use)
     use 'nelsyeung/twig.vim'
     -- use('vbe0201/vimdiscord')
     use { "nvim-neotest/nvim-nio" }
+    use {
+        'scottmckendry/cyberdream.nvim',
+        lazy = false,
+        priority = 1000
+    }
 end)

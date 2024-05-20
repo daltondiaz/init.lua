@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["cyberdream.nvim"] = {
+    loaded = true,
+    path = "/home/dalton/.local/share/nvim/site/pack/packer/start/cyberdream.nvim",
+    url = "https://github.com/scottmckendry/cyberdream.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -169,6 +174,11 @@ _G.packer_plugins = {
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-nio"] = {
+    loaded = true,
+    path = "/home/dalton/.local/share/nvim/site/pack/packer/start/nvim-nio",
+    url = "https://github.com/nvim-neotest/nvim-nio"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
@@ -233,11 +243,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/vim-signify",
     url = "https://github.com/mhinz/vim-signify"
-  },
-  vimdiscord = {
-    loaded = true,
-    path = "/home/dalton/.local/share/nvim/site/pack/packer/start/vimdiscord",
-    url = "https://github.com/vbe0201/vimdiscord"
   }
 }
 

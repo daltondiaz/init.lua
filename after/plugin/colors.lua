@@ -1,4 +1,4 @@
-require("tokyonight").setup({
+--[[require("tokyonight").setup({
   -- your configuration comes here
   -- or leave it empty to use the default settings
   style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
@@ -33,23 +33,63 @@ require("tokyonight").setup({
   ---@param colors ColorScheme
     on_highlights = function(hl, c) end,
 })
+--]]
+--
+require("cyberdream").setup({
+    -- Enable transparent background
+    transparent = true, -- Default: false
 
+    -- Enable italics comments
+    italic_comments = false, -- Default: false
+
+    -- Replace all fillchars with ' ' for the ultimate clean look
+    hide_fillchars = true, -- Default: false
+
+    -- Modern borderless telescope theme
+    borderless_telescope = false, -- Default: true
+
+    -- Set terminal colors used in `:terminal`
+    terminal_colors = false, -- Default: true
+    theme = {
+        variant = "default", -- use "light" for the light variant
+        highlights = {
+            -- Highlight groups to override, adding new groups is also possible
+            -- See `:h highlight-groups` for a list of highlight groups or run `:hi` to see all groups and their current values
+
+            -- Example:
+            Comment = { fg = "#696969", bg = "NONE", italic = true },
+
+            -- Complete list can be found in `lua/cyberdream/theme.lua`
+        },
+
+        -- Override a color entirely
+        colors = {
+            -- For a list of colors see `lua/cyberdream/colours.lua`
+            -- Example:
+            bg = "#000000",
+            green = "#00ff00",
+            magenta = "#ff00ff",
+        },
+    },
+})
 
 function ColorMyPencils(color)
-
-	color = color or "tokyonight"
-	vim.cmd.colorscheme(color)
+    color = color or "cyberdream"
+    vim.o.background = "dark"
+    vim.cmd.colorscheme(color)
 
     -- transparent background
-   --[[ vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
- 	vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"}) ]]--
+    --[[ vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+    vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"}) ]]
+                                                            --
 
-   --[[ vim.api.nvim_set_hl(0, 'TelescopeNormal', {bg='none'})
+    --[[ vim.api.nvim_set_hl(0, 'TelescopeNormal', {bg='none'})
     vim.api.nvim_set_hl(0, 'TelescopeBorder', {bg='none'})
     vim.api.nvim_set_hl(0, 'TelescopePromptTitle', {bg='none'})
     vim.api.nvim_set_hl(0, 'TelescopePromptBorder', {bg='none'})
     vim.api.nvim_set_hl(0, 'TelescopePreviewTitle', {bg='none'})
-    vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', {bg='none'})]]--
-
+    vim.api.nvim_set_hl(0, 'TelescopeResultsTitle', {bg='none'})]]
+                                                                   --
 end
+
 ColorMyPencils()
