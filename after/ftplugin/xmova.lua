@@ -1,0 +1,1 @@
+-- we can do remaps only for xmova filetype

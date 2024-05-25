@@ -68,4 +68,10 @@ return require('packer').startup(function(use)
         lazy = false,
         priority = 1000
     }
+    use({
+        "stevearc/oil.nvim",
+        config = function()
+            require("oil").setup()
+        end,
+    })
 end)

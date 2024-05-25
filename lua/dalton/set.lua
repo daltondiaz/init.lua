@@ -30,4 +30,13 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 vim.diagnostic.open_float()
 
+-- show the replaces
 vim.opt.inccommand= "split"
+
+-- create file type for my current job to the xmova type who use .xmv 
+-- you can delete this
+vim.filetype.add {
+    extension = {
+        xmv = "xmova",
+    }
+}
