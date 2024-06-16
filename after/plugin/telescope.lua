@@ -10,14 +10,45 @@ require('telescope').setup({
 require('telescope').load_extension('fzf')
 -- require("telescope").load_extension('harpoon')
 
+-- custom picker
+local actions = require("telescope.actions")
+local pickers = require("telescope.pickers")
+local finders = require("telescope.finders")
+local conf = require("telescope.config").values
+local previewers = require "telescope.previewers"
 local builtin = require('telescope.builtin')
--- local extension = require('telescope.extension')
+
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fr', builtin.git_branches, {})
+vim.keymap.set('n', '<leader>fd', builtin.git_branches, {})
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
--- vim.keymap.set('n', '<leader><leader>b', ":Git for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'", {})
+vim.keymap.set('n', '<leader>bb', function()
+    local cmd = {
+        "git",
+        "for-each-ref",
+        "--sort=-committerdate",
+        "--format=%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))",
+        "refs/heads"
+    }
+    local finder = finders.new_oneshot_job(cmd, {
+        entry_maker = conf.git_branch_entry_marker
+    })
+    pickers.new({}, {
+        prompt_title = "Git Branches (by last commit)",
+        finder = finder,
+        previewer = previewers.git_branch_log.new({}),
+        sorter = conf.generic_sorter({}),
+        attach_mappings = function(_, map)
+            -- Use default mappings
+            map("i", "<CR>", actions.git_checkout)
+            map("n", "<CR>", actions.git_checkout)
+            return true
+        end
+    }):find()
+end)
+
 vim.keymap.set('n', '<C-g>', builtin.git_status, {})
 vim.keymap.set('n', '<C-l>', builtin.git_commits, {})
 vim.keymap.set('n', '<C-s>', builtin.grep_string, {})

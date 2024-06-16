@@ -74,4 +74,6 @@ return require('packer').startup(function(use)
             require("oil").setup()
         end,
     })
+    -- local plugin in dev progress
+    use '~/Dev/personal/commentable'
 end)

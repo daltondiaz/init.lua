@@ -10,5 +10,9 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 -- Open parent directory in floating window
 vim.keymap.set("n", "<space>-", require("oil").toggle_float)
 
+vim.keymap.set("n", "<space>kl", function ()
+    require("oil").open_preview()
+end )
+
 -- Close the window
-vim.keymap.set("n", "<ESC>", require("oil").close)
+-- vim.keymap.set("n", "<ESC>", require("oil").close)
