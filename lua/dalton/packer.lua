@@ -16,7 +16,6 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/playground')
     use('nvim-treesitter/nvim-treesitter-context')
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    -- use('theprimeagen/harpoon')
     use {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
@@ -75,5 +74,5 @@ return require('packer').startup(function(use)
         end,
     })
     -- local plugin in dev progress
-    use '~/Dev/personal/commentable'
+    --use '~/Dev/personal/commentable'
 end)

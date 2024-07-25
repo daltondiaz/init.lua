@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  commentable = {
+    loaded = true,
+    path = "/home/dalton/.local/share/nvim/site/pack/packer/start/commentable",
+    url = "/home/dalton/Dev/personal/commentable"
+  },
   ["cyberdream.nvim"] = {
     loaded = true,
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/cyberdream.nvim",
@@ -194,6 +199,12 @@ _G.packer_plugins = {
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["oil.nvim"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0" },
+    loaded = true,
+    path = "/home/dalton/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/dalton/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -247,6 +258,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: oil.nvim
+time([[Config for oil.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\boil\frequire\0", "config", "oil.nvim")
+time([[Config for oil.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

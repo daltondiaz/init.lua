@@ -2,8 +2,8 @@ local home = os.getenv('HOME')
 local jdtls = require('jdtls')
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = home .. '/Dev/java/workspace' .. project_name
-local root_markers = {'pom.xml','gradlew', 'mvnw', '.git'}
+local workspace_dir = home .. '/Dev/java/workspace/' .. project_name
+local root_markers = {'pom.xml','gradlew', 'mvnw', '.git', 'build.gradle'}
 local root_dir = require('jdtls.setup').find_root(root_markers)
 
 function nnoremap(rhs, lhs, bufopts, desc)
@@ -21,7 +21,7 @@ local on_attach = function(client, bufnr)
     nnoremap('K', vim.lsp.buf.hover, bufopts, "Show method")
     nnoremap('[d', vim.diagnostic.goto_next, bufopts, "Go to Next Diagnostic")
     nnoremap(']d', vim.diagnostic.goto_prev, bufopts, "Go to Next Diagnostic")
-    nnoremap('<leader>ca', vim.lsp.buf.code_action, bufopts, "Code Action")
+    nnoremap('<leader>at', vim.lsp.buf.code_action, bufopts, "Code Action")
     nnoremap('<leader>rn', vim.lsp.buf.rename, bufopts, "Rename")
     nnoremap('<leader>gr', vim.lsp.buf.references, bufopts, "Show References")
     nnoremap('<C-h>', vim.lsp.buf.signature_help, bufopts, "")
