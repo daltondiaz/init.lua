@@ -2,8 +2,8 @@ local home = os.getenv('HOME')
 local jdtls = require('jdtls')
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-local workspace_dir = home .. '/Dev/java/workspace/' .. project_name
-local root_markers = {'pom.xml','gradlew', 'mvnw', '.git', 'build.gradle'}
+local workspace_dir = home .. '/.cache/workspace' .. project_name
+local root_markers = {'pom.xml','gradlew', 'mvnw', '.git'}
 local root_dir = require('jdtls.setup').find_root(root_markers)
 
 function nnoremap(rhs, lhs, bufopts, desc)
@@ -39,7 +39,7 @@ local config = {
     -- The command that starts the language server
     -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
     cmd = {
-        '/usr/lib/jvm/java-17-openjdk-amd64/bin/java', -- or '/path/to/java11_or_newer/bin/java'
+        'java', -- or '/path/to/java11_or_newer/bin/java'
         '-javaagent:/home/dalton/.config/nvim/dependencies/lombok/lombok.jar',
         '-Declipse.application=org.eclipse.jdt.ls.core.id1',
         '-Dosgi.bundles.defaultStartLevel=4',
@@ -50,16 +50,18 @@ local config = {
         '--add-modules=ALL-SYSTEM',
         '--add-opens', 'java.base/java.util=ALL-UNNAMED',
         '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-        '-jar', vim.fn.glob('/home/dalton/.config/jdt-language-server/plugins/org.eclipse.equinox.launcher_*.jar'),
-        '-configuration', '/home/dalton/.config/jdt-language-server/config_linux',
+        -- .config/jdt-language-server was a folder that I create
+        -- Follow this instructions to plugins and config_linux: https://github.com/mfussenegger/nvim-jdtls?tab=readme-ov-file#language-server-installation
+        '-jar', vim.fn.glob(home ..'/.config/jdt-language-server/plugins/org.eclipse.equinox.launcher_*.jar'),
+        '-configuration', home .. '/.config/jdt-language-server/config_linux',
         '-data', workspace_dir
     },
 
-    -- 
     -- This is the default if not provided, you can remove it. Or adjust as needed.
     -- One dedicated LSP server & client will be started per unique root_dir
     root_dir = root_dir,
 
+    -- Next settings is optional
     -- Here you can configure eclipse.jdt.ls specific settings
     -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
     -- for a list of options
