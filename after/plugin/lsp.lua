@@ -15,7 +15,9 @@ require('mason-lspconfig').setup({
         'rust_analyzer',
         'gopls',
         'lua_ls',
-        'lemminx'
+        'lemminx',
+        'intelephense',
+        'elixirls'
     },
   handlers = {
     lsp.default_setup,
@@ -114,3 +116,8 @@ vim.diagnostic.config {
    }
  }
 
+require'lspconfig'.elixirls.setup{
+    -- Unix
+    -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#elixirls
+    cmd = { '/home/dalton/.elixir/elixir-ls/language_server.sh'  };
+}
