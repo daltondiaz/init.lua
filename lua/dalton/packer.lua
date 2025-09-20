@@ -16,8 +16,11 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/playground')
     use('nvim-treesitter/nvim-treesitter-context')
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    -- use { 'Hashino/speed.nvim', opts = { float_buffer = false } }
+    use { '~/dev/personal/vim/speed.nvim', opts = { float_buffer = false } }
     use {
-        "ThePrimeagen/harpoon",
+        -- "ThePrimeagen/harpoon",
+        "~/dev/personal/harpoon",
         branch = "harpoon2",
         requires = { { "nvim-lua/plenary.nvim" } }
     }
