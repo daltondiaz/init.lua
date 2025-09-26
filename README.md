@@ -44,6 +44,8 @@ wonderfull name or you can rename to your name/alias
 
 ### Packer
 
+If you do not have installed it is need to follow this: [Packer Quickstart](https://github.com/wbthomason/packer.nvim?tab=readme-ov-file#quickstart)
+
 Now inside `lua/dalton`(or your name/alies of last step) open `nvim packer.lua`
 and type `:PackerSync` if don't work use this command first `:so` to source your 
 file.
