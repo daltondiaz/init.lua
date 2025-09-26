@@ -48,6 +48,7 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
     --  use 'github/copilot.vim'
+    use 'lewis6991/gitsigns.nvim'
 
     use 'jose-elias-alvarez/null-ls.nvim'
 
