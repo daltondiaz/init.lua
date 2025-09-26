@@ -3,7 +3,7 @@ local jdtls = require('jdtls')
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local workspace_dir = home .. '/.cache/workspace' .. project_name
-local root_markers = {'pom.xml','gradlew', 'mvnw', '.git'}
+local root_markers = {'pom.xml','gradlew', 'mvnw', '.git', 'build.gradle'}
 local root_dir = require('jdtls.setup').find_root(root_markers)
 
 function nnoremap(rhs, lhs, bufopts, desc)
