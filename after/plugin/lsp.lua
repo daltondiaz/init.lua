@@ -2,7 +2,7 @@
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local default_setup = function(server)
-    require('lspconfig')[server].setup({
+    vim.lsp.config.setup({
         capabilities = lsp_capabilities,
     })
 end
@@ -81,7 +81,7 @@ vim.diagnostic.config {
     update_in_insert = true,
 }
 
-require 'lspconfig'.lua_ls.setup {
+vim.lsp.config('lua_ls', {
     on_init = function(client)
         local path = client.workspace_folders[1].name
         if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
@@ -111,4 +111,4 @@ require 'lspconfig'.lua_ls.setup {
     settings = {
         Lua = {}
     }
-}
+})
